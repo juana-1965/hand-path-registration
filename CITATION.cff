@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the article below."
+title: "Hand-path arc-length registration"
+authors:
+  - family-names: Mayo
+    given-names: Juana
+  - family-names: García-Vallejo
+    given-names: Daniel
+  - family-names: Ferrand
+    given-names: Patricia
+  - family-names: Zarco
+    given-names: M. José
+  - family-names: Ojeda
+    given-names: Joaquín
+license: MIT
+preferred-citation:
+  type: article
+  title: "Hand-path arc-length registration of post-stroke upper-limb kinematics and kinetics"
+  authors:
+    - family-names: Mayo
+      given-names: Juana
+    - family-names: García-Vallejo
+      given-names: Daniel
+    - family-names: Ferrand
+      given-names: Patricia
+    - family-names: Zarco
+      given-names: M. José
+    - family-names: Ojeda
+      given-names: Joaquín
+  journal: submitted to "Journal of Biomechanics"
+  year: 2026
