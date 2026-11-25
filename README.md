@@ -1,5 +1,7 @@
 # Hand-path arc-length registration
 
+[![DOI](https://zenodo.org/badge/1460161509.svg)](https://doi.org/10.5281/zenodo.24285469)
+
 MATLAB code accompanying the article:
 
 > Mayo J, García-Vallejo D, Ferrand P, Zarco MJ, Ojeda J. *Hand-path arc-length registration of post-stroke upper-limb kinematics and kinetics.* Journal of Biomechanics (submitted).
