@@ -16,6 +16,7 @@ registration/    Functions to segment trials and normalize them with each method
   peak_attenuation.m     peak attenuation of the mean curve (%)
 examples/
   demo_registration.m    minimal example with simulated trials
+  example_experimental.m example with the experimental marker data of one participant
 synthetic/
   run_synthetic_validation.m   synthetic validation of the article (planar arm model)
   synthetic_statistics.m       statistics of the synthetic validation
@@ -23,6 +24,7 @@ synthetic/
 data/
   synthetic_datasets.csv       results of the synthetic validation (one row per data set and method)
   synthetic_summary.csv        means per condition and method
+  experimental/                anonymized marker trajectories of the participants (see below)
 ```
 
 ## Methods
@@ -82,9 +84,30 @@ figure_synthetic;
 - **Synthetic validation**: Signal Processing Toolbox (`butter`, `filtfilt`), or the `signal` package in Octave.
 - **Statistics and figure**: MATLAB R2020a or later; Statistics and Machine Learning Toolbox for `synthetic_statistics.m`.
 
+## Experimental data
+
+`data/experimental/` contains the marker trajectories of the 25 participants analysed in the article (12 controls and 13 stroke survivors: 10 mild and 3 moderate), for the trials included in the analysis. Participants are identified only by anonymous codes (C01-C12, P01-P13), the same as in Supplementary Data S1 of the article; no names, dates, clinical, demographic or anthropometric data are included.
+
+| File | Content |
+|---|---|
+| `participants.csv` | Code, group (Control, Mild, Moderate), analysed side and number of trials |
+| `events.csv` | Segmentation events used in the article for the analysed side (frame numbers): start (IGP) and end (FGP) of the reach, start (IRP) and end (FRP) of the return |
+| `<Code>_trial<NN>.csv` | One file per trial: frame, time (s) and X, Y, Z coordinates (m) of the 16 markers |
+
+Data were recorded at 100 Hz with an optoelectronic system (SMART-D, BTS Bioengineering) and are expressed in the laboratory reference frame. Gaps in the marker trajectories were filled and the trajectories were low-pass filtered with a fourth-order zero-lag Butterworth filter (10 Hz cut-off). Events include the manual corrections made after visual inspection. Markers: `nasion`, `rzygpr`/`lzygpr` (zygomatic processes), `rshould`/`lshould` (acromioclavicular joints), `sternum` (jugular notch), `relbow`/`lelbow` (olecranons), `rradius`/`lradius` and `rulna`/`lulna` (radial and ulnar styloids), `rhand`/`lhand` (third metacarpophalangeal joints) and `rfinger`/`lfinger` (index fingertips).
+
+Files use commas as separators and points as decimal marks. In spreadsheet software configured with a comma decimal separator (e.g. Spanish Excel), open them with *Data > From Text/CSV* and choose the comma delimiter.
+
+```matlab
+cd examples
+example_experimental('P04')        % LIN, PVR and CSR for one participant
+```
+
+The joint angles and moments of the article require the biomechanical model described in the article and are not included.
+
 ## Data availability
 
-The experimental data of the study are not included in this repository because the informed consent signed by the participants did not cover the public release of their data. De-identified data are available from the corresponding author on reasonable request. The synthetic data and all the code needed to reproduce the synthetic validation are included.
+The marker trajectories are shared with the authorization of the Hospital Universitario Virgen del Rocío (Seville, Spain), without any information that could identify the participants. The synthetic data and all the code needed to reproduce the synthetic validation are included.
 
 ## Citation
 

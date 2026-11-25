@@ -13,6 +13,8 @@ authors:
   - family-names: Ojeda
     given-names: Joaquín
 license: MIT
+doi: "10.5281/zenodo.24285469"
+repository-code: "https://github.com/juana-1965/hand-path-registration"
 preferred-citation:
   type: article
   title: "Hand-path arc-length registration of post-stroke upper-limb kinematics and kinetics"
@@ -27,5 +29,5 @@ preferred-citation:
       given-names: M. José
     - family-names: Ojeda
       given-names: Joaquín
-  journal: submitted to "Journal of Biomechanics"
+  journal: "Journal of Biomechanics"
   year: 2026
